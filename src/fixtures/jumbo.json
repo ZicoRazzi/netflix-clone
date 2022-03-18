@@ -9,8 +9,8 @@
   },
   {
     "id": 2,
-    "title": "Download your programmes to watch on the go.",
-    "subTitle": "Save your data and watch all your favourites offline.",
+    "title": "Download your programmes to watch offline.",
+    "subTitle": "Save your favourites easily and always have something to watch.",
     "image": "home-mobile.jpg",
     "alt": "Watch on mobile",
     "direction": "row-reverse"
@@ -22,5 +22,13 @@
     "image": "home-imac.jpg",
     "alt": "Money Heist on Netflix",
     "direction": "row"
+  },
+  {
+    "id": 4,
+    "title": "Create profiles for children.",
+    "subTitle": "Send children on adventures with their favourite characters in a space made just for them – free with your membership.",
+    "image": "home-children.png",
+    "alt": "Kids on Netflix",
+    "direction": "row-reverse"
   }
 ]
