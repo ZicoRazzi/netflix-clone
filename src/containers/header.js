@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '../components';
 import { NetflixLogo } from '../Logos/NetflixLogo';
+import './styles.css';
 
 export function HeaderContainer({ children }) {
   return (
@@ -24,10 +25,10 @@ export function HeaderContainer({ children }) {
             membership.
           </Header.Text>
 
-          <Header.Nav>
+          <form className="header-form">
             <Header.Input placeholder="Email address" />
             <Header.Button>Get Started</Header.Button>
-          </Header.Nav>
+          </form>
         </Header.Hero>
       </Header.Frame>
       {children}

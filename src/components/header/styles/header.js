@@ -8,23 +8,8 @@ export const Background = styled.div`
   background-blend-mode: multiply;
   border-bottom: 8px solid #222;
   height: 709px;
-  /* &::before {
-    content: '';
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background: rgba(0, 0, 0, 0.3);
-    background-image: radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.3)
-    );
-  } */
-  @media (max-width: 1100px) {
-    ${({ dontShowOnSmallViewPort }) =>
-      dontShowOnSmallViewPort && `background: none;`}
+  @media (max-width: 676px) {
+    height: 500px;
   }
 `;
 
@@ -48,32 +33,48 @@ export const Nav = styled.div`
   padding-top: 3rem;
   width: 100%;
   height: 10rem;
+
+  @media (max-width: 767px) {
+    padding-top: 1.4rem;
+  }
 `;
 
 export const Logo = styled.img`
   height: 36px;
   width: 134px;
   margin-right: 40px;
-  @media (min-width: 1449px) {
-    height: 45px;
-    width: 167px;
+
+  @media (max-width: 767px) {
+    height: 24px;
+    width: 88px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 
 export const ButtonLink = styled(ReactRouterLink)`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #e50914;
   width: 84px;
   height: fit-content;
   color: white;
   border: 0;
-  font-size: 15px;
+  font-size: 1.1rem;
   border-radius: 3px;
-  padding: 8px 17px;
+  padding: 0.5rem 0.8rem;
   cursor: pointer;
   text-decoration: none;
   &:hover {
     background: #f40612;
+  }
+  @media (max-width: 676px) {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.3rem;
+    width: 66px;
   }
 `;
 
@@ -88,19 +89,29 @@ export const Hero = styled.div`
   color: #fff;
   padding-top: 8rem;
   text-align: center;
+  @media (max-width: 676px) {
+    width: 100%;
+    padding-top: 3rem;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 3.125rem;
   line-height: 1.2;
   margin: 1rem;
+  @media (max-width: 676px) {
+    font-size: 1.625rem;
+  }
 `;
 
 export const SubTitle = styled.p`
   font-size: 1.625rem;
   margin: 0;
+  @media (max-width: 676px) {
+    font-size: 1.1rem;
+  }
 `;
-export const Nav_2 = styled.form``;
+export const Content = styled.div``;
 export const Input = styled.input`
   max-width: 450px;
   width: 100%;
@@ -109,9 +120,10 @@ export const Input = styled.input`
   height: 60px;
   box-sizing: border-box;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 676px) {
     height: 50px;
     font-size: 16px;
+    width: 100%;
   }
 `;
 
@@ -131,9 +143,11 @@ export const Button = styled.button`
   }
   @media (max-width: 1000px) {
     height: 50px;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 20px;
     font-weight: bold;
+    width: 9rem;
+    padding: 0 1rem;
   }
   img {
     margin-left: 10px;
@@ -150,4 +164,7 @@ export const Text = styled.p`
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: -4rem;
+  @media (max-width: 676px) {
+    font-size: 1.1rem;
+  }
 `;

@@ -13,7 +13,7 @@ import {
   Button,
   Text,
   Nav,
-  Nav_2,
+  Content,
 } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
@@ -57,8 +57,8 @@ Header.SubTitle = function HeaderSubTitle({ children, ...restProps }) {
   return <SubTitle {...restProps}>{children}</SubTitle>;
 };
 
-Header.Nav_2 = function HeaderForm({ children, ...restProps }) {
-  return <Nav_2 {...restProps}>{children}</Nav_2>;
+Header.Content = function HeaderForm({ children, ...restProps }) {
+  return <Content {...restProps}>{children}</Content>;
 };
 Header.Input = function HeaderInput({ children, ...restProps }) {
   return <Input {...restProps} />;
