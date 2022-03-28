@@ -5,7 +5,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import App from './App';
 import { GlobalStyles } from './GlobalStyles';
 import 'normalize.css';
-import { firebase } from './lib/firebase.prod';
+import firebase from './lib/firebase.prod';
 import { FirebaseContext } from './context/firebase';
 
 render(
@@ -17,3 +17,4 @@ render(
   </Router>,
   document.getElementById('root')
 );
+

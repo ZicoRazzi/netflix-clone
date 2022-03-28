@@ -1,4 +1,3 @@
-import { restElement } from '@babel/types';
 import React from 'react';
 import {
   Container,
@@ -12,7 +11,7 @@ import {
   Submit,
 } from './styles/form';
 
-export default function Form({ children, ...restElement }) {
+export default function Form({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 

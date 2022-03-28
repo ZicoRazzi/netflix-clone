@@ -1,13 +1,13 @@
-import styled from 'styled-components/macro';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import styled from "styled-components/macro";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 export const Background = styled.div`
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.1);
   background-size: cover;
   background-blend-mode: multiply;
   border-bottom: 8px solid #222;
-  height: 709px;
+  height: 809px;
   @media (max-width: 676px) {
     height: 500px;
   }
@@ -38,7 +38,11 @@ export const Nav = styled.div`
     padding-top: 1.4rem;
   }
 `;
-
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
 export const Logo = styled.img`
   height: 36px;
   width: 134px;
@@ -166,5 +170,57 @@ export const Text = styled.p`
   margin-bottom: -4rem;
   @media (max-width: 676px) {
     font-size: 1.1rem;
+  }
+`;
+
+export const Link = styled.p`
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: ${({ active }) => (active === "true" ? "700" : "normal")};
+  cursor: pointer;
+
+  &:hover {
+    color: #8e8e8e;
+  }
+`;
+
+export const Dropdown = styled.div`
+  display: none;
+  /* background-color: #000; */
+  background: rgba(0, 0, 0, 0.8);
+
+  position: absolute;
+  padding: 20px 10px 0;
+  width: 220px;
+  height: 200px;
+  top: 32px;
+  right: 0;
+  transition: all 0.3s ease;
+`;
+export const DropdownProfile = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+`;
+export const Picture = styled.img`
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #fff;
+`;
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  position: relative;
+  color: #fff;
+  button {
+    cursor: pointer;
+  }
+  &:hover > ${Dropdown} {
+    display: flex;
+    flex-direction: column;
   }
 `;

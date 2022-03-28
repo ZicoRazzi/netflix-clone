@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as ReachRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import HeaderBG from '../../images/home-bg.jpg';
 import ChevronRight from '../../icons/chevron-right.png';
 import {
@@ -12,8 +12,14 @@ import {
   Input,
   Button,
   Text,
+  Group,
+  Link,
   Nav,
   Content,
+  Picture,
+  Profile,
+  Dropdown,
+  DropdownProfile
 } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
@@ -32,16 +38,20 @@ export default function Header({ bg = true, children, ...restProps }) {
   );
 }
 
-Header.Frame = function HeaderFrame({ children, ...restProps }) {
+Header.Frame = function HeaderGroup({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
+};
+
+Header.Group = function HeaderGroup({ children, ...restProps }) {
+  return <Group {...restProps}>{children}</Group>;
 };
 
 Header.Nav = function HeaderNav({ children, ...restProps }) {
   return <Nav {...restProps}>{children}</Nav>;
 };
 
-Header.Logo = function HeaderLogo({ to, children, ...restProps }) {
-  return <ReachRouterLink to={to}>{children}</ReachRouterLink>;
+Header.Logo = function HeaderLogo({ to, children}) {
+  return <ReactRouterLink to={to}>{children}</ReactRouterLink>;
 };
 
 Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
@@ -74,4 +84,23 @@ Header.Button = function HeaderButton({ children, ...restProps }) {
 
 Header.Text = function HeaderText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>;
+};
+
+Header.Profile = function HeaderProfile({ children, ...restProps }) {
+  return <Profile {...restProps}>{children}</Profile>;
+};
+
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
+};
+
+Header.DropdownProfile = function HeaderDropdownProfile({ children, ...restProps }) {
+  return <DropdownProfile {...restProps}>{children}</DropdownProfile>;
+};
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+  return <Picture {...restProps} src={`../../images/users/${src}.png`} />;
+};
+
+Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
+  return <Link {...restProps}>{children}</Link>;
 };
