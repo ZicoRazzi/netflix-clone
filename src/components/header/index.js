@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import HeaderBG from '../../images/home-bg.jpg';
 import ChevronRight from '../../icons/chevron-right.png';
+import SearchIconImg from '../../icons/search.png'
 import {
   Container,
   Background,
@@ -19,7 +20,10 @@ import {
   Picture,
   Profile,
   Dropdown,
-  DropdownProfile
+  DropdownProfile,
+  Search,
+  SearchIcon,
+  SearchInput
 } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
@@ -89,6 +93,27 @@ Header.Text = function HeaderText({ children, ...restProps }) {
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
   return <Profile {...restProps}>{children}</Profile>;
 };
+
+Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps }) {
+  const [searchActive, setSearchActive] = useState(false)
+
+  return (
+    <Search {...restProps}>
+      <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)} data-testid="search-click">
+        <img src={SearchIconImg} alt="search"/>
+      </SearchIcon>
+      <SearchInput
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder='Search movies and series'
+        active={searchActive}
+        data-testid='search-input'
+      />
+    </Search>
+  )
+}
+
 
 Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
   return <Dropdown {...restProps}>{children}</Dropdown>;

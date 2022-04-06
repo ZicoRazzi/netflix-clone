@@ -1,15 +1,17 @@
 import styled from "styled-components/macro";
-import Joker from "../../../images/joker1.jpg";
+import Valhalla from "../../../images/valhalla.jpg";
 
 export const Background = styled.div`
+  position: relative;
   width: 100%;
-  background-image: url(${Joker});
+  background-image: url(${Valhalla});
   background-size: cover;
-  @media (max-width: 676px) {
-    height: 500px;
-    background-size: contain;
-    background-repeat:  no-repeat;
 
+  @media (max-width: 767px) {
+    height: 400px;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    margin-bottom: 100px;
   }
 `;
 
@@ -30,20 +32,45 @@ export const Feature = styled.div`
 `;
 
 export const Title = styled.h2`
-   color: #fff;
-   font-size: 50px;
-   line-height: normal;
-   font-weight: bold;
-   text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
-   margin-bottom: 20px;
-`
+  color: #fff;
+  font-size: 50px;
+  line-height: normal;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  /* opacity: 1;
+  z-index: 99; */
+`;
 
 export const Text = styled.p`
-   color: #fff;
-   font-size: 22px;
-   line-height: 1.4;
-   letter-spacing: 1.2px;
-   text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
-   margin: 0;
-`
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: 1.2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  margin: 0;
+  
+  /* opacity: 1;
+  z-index: 99; */
+`;
 
+export const PlayButton = styled.button`
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0,0,0,0.35);
+  background-color: #e6e6e6;
+  color: #000;
+  border-width: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  max-width: 130px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background-color 0.5 ease;
+
+  &:hover{
+    background-color: #ff1e1e;
+    color: #fff;
+  }
+
+`

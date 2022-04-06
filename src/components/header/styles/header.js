@@ -35,7 +35,7 @@ export const Nav = styled.div`
   height: 10rem;
 
   @media (max-width: 767px) {
-    padding-top: 1.4rem;
+    padding-top: 0;
   }
 `;
 export const Group = styled.div`
@@ -49,8 +49,8 @@ export const Logo = styled.img`
   margin-right: 40px;
 
   @media (max-width: 767px) {
-    height: 24px;
-    width: 88px;
+    height: 21px;
+    width: 64px;
     svg {
       width: 100%;
       height: 100%;
@@ -124,7 +124,7 @@ export const Input = styled.input`
   height: 60px;
   box-sizing: border-box;
 
-  @media (max-width: 676px) {
+  @media (max-width: 767px) {
     height: 50px;
     font-size: 16px;
     width: 100%;
@@ -183,20 +183,23 @@ export const Link = styled.p`
   &:hover {
     color: #8e8e8e;
   }
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
 
 export const Dropdown = styled.div`
   display: none;
-  /* background-color: #000; */
   background: rgba(0, 0, 0, 0.8);
-
   position: absolute;
   padding: 20px 10px 0;
-  width: 220px;
+  width: 180px;
   height: 200px;
   top: 32px;
   right: 0;
   transition: all 0.3s ease;
+
+  
 `;
 export const DropdownProfile = styled.div`
   display: flex;
@@ -204,6 +207,7 @@ export const DropdownProfile = styled.div`
   align-items: center;
 `;
 export const Picture = styled.img`
+  background: url()(${({ src }) => src});
   background-size: contain;
   width: 32px;
   height: 32px;
@@ -224,3 +228,49 @@ export const Profile = styled.div`
     flex-direction: column;
   }
 `;
+
+export const Search = styled.div`
+position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  svg {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
+
+export const SearchIcon = styled.button`
+position: absolute;
+left: 12px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+
+  img{
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
+`
+
+export const SearchInput = styled.input`
+  background-color: #44444459;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: width 0.5s;
+  height: 30px;
+  font-size: 14px;
+  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
+  padding: ${({ active }) => (active === true ? '0 30px' : '0')};
+  opacity: ${({ active }) => (active === true ? '1' : '0')};
+  width: ${({ active }) => (active === true ? '200px' : '0px')};
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`

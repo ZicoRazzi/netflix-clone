@@ -1,5 +1,5 @@
 import React from 'react'
-import { Background, Feature, Text, Title } from './styles/browse-header'
+import { Background, Feature, Text, Title, PlayButton } from './styles/browse-header'
 
 export default function BrowseHeader({ children, ...restProps }) {
   return (
@@ -19,4 +19,8 @@ BrowseHeader.Text = function BrowseHeaderText({ children, ...restProps }) {
 
 BrowseHeader.Title = function BrowseHeaderTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>
+}
+
+BrowseHeader.PlayButton = function BrowseHeaderPlayButton({ children, ...restProps }) {
+  return <PlayButton {...restProps}>{children}</PlayButton>
 }
